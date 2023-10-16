@@ -24,11 +24,11 @@ def create_custom_chatEngine(index):
     # list of `ChatMessage` objects
  
     template = (
-    "Folgende Informationen : \n"
+    "Following Informations : \n"
     "---------------------\n"
     "{context_str}"
     "\n---------------------\n"
-    "Bitte antworte auf die Frage, antworte immer aus der Ich-Perspektive und Beginne deine Antwort immer mit David: {query_str}\n"
+    "Please answer the question always from the first person perspective and always start your answer with David: {query_str}\n"
 )
     qa_template = Prompt(template)
 
@@ -46,15 +46,15 @@ def insertTable(sessionId, text):
   
 # Add here your secret API-KEY from Supabase 
 # For security reasons please create a enviroment variable for it 
-key = os.environ['DB_KEY'] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJycmZ3aWdha3BlcHhua3Z4eHpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODg0OTIxNjYsImV4cCI6MjAwNDA2ODE2Nn0.QXFVUIRfprom5kXNS0bcmGXVtXZYotdMnLLzxGMkqys"
+key = os.environ['DB_KEY'] = "PASTE_YOUR_SUPABASE_DB_KEY_HERE"
 
 # Replace with your OpenAI API key
 # For security reasons please create a enviroment variable for it 
 
-os.environ["OPENAI_API_KEY"] = ""  
+os.environ["OPENAI_API_KEY"] = "PASTE_YOUR_OPENAI_KEY_HERE"  
 
 # Add here your supabase-URL
-url = "https://rrrfwigakpepxnkvxxzc.supabase.co"
+url = "PASTE_YOUR_URL_HERE"
 
 supabase: Client = create_client(url, key)
 
