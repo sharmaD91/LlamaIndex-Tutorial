@@ -1,0 +1,6 @@
+openai
+llama-index
+nltk
+gradio
+pypdf
+supabase
