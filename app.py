@@ -51,7 +51,7 @@ key = os.environ['DB_KEY'] = "PASTE_YOUR_SUPABASE_DB_KEY_HERE"
 # Replace with your OpenAI API key
 # For security reasons please create a enviroment variable for it 
 
-os.environ["OPENAI_API_KEY"] = "PASTE_YOUR_OPENAI_KEY_HERE"  
+#os.environ["OPENAI_API_KEY"] = "PASTE_YOUR_OPENAI_KEY_HERE"  
 
 # Add here your supabase-URL
 url = "PASTE_YOUR_URL_HERE"
@@ -68,15 +68,9 @@ index.storage_context.persist("index_files")
 storage_context = StorageContext.from_defaults(persist_dir="index_files")
 index = load_index_from_storage(storage_context)
 
-chat_engine = create_custom_chatEngine(index)
-
-query_engine = index.as_chat_engine(chat_mode="condense_question", streaming=True)
-
-
-
-
-
 with gr.Blocks() as demo:
+    chat_engine = create_custom_chatEngine(index)
+
     # Create new session_id
     session_id = str(uuid.uuid1())
 
